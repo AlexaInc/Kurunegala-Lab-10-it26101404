@@ -23,9 +23,24 @@ public class IT26101404lab10Q1 {
         System.out.print("\nEnteer the mark (0 - 100) : ");
 
 
+
         marks = input.nextDouble();
         validateMarks(marks);
-        System.out.println("\nThe Grade for the Entered Mark is: " + calcGrade(marks)+"\n\n");
+
+        char grade = calcGrade(marks);
+
+        if (marks >= 75) {
+            assert (grade == 'A') : "Incorrect Grade Assigned";
+        } else if (marks >= 60 && marks <= 74) {
+            assert (grade == 'B') : "Incorrect Grade Assigned";
+        } else if (marks >= 50 && marks <= 59) {
+            assert (grade == 'C') : "Incorrect Grade Assigned";
+        } else if (marks >= 40 && marks <= 49) {
+            assert (grade == 'D') : "Incorrect Grade Assigned";
+        } else {
+            assert (grade == 'F') : "Incorrect Grade Assigned";
+        }
+        System.out.println("\nThe Grade for the Entered Mark is: " + grade+"\n\n");
         
     }
 }
